@@ -1,0 +1,26 @@
+{
+  "name": "quick-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "quick": "/bin/quick.js",
+    "quick-add": "bin/quick-add.js",
+    "quick-delete": "bin/quick-delete.js",
+    "quick-list": "bin/quick-list.js",
+    "quick-init": "bin/quick-init.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "inquirer": "^7.1.0",
+    "ora": "^4.0.3",
+    "commander": "^8.0.0",
+    "download-git-repo": "^3.0.2"
+  }
+}
