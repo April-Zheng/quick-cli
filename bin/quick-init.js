@@ -53,11 +53,33 @@ const downTemplate = (templateName, projectName) => {
         console.log(chalk.red(`Generation failed. ${err}`))
         return
       }
+      // 读取下载下来的package.json 修改package name
+      const packageJSONPath = projectName + '/package.json'
+      try {
+        fs.readFile(packageJSONPath, 'utf-8', (err, data) => {
+          if (err) {
+            chalk.white('\n read file error \n', err)
+            return
+          }
+          const fileContent = JSON.parse(data)
+          fs.writeFileSync(
+            packageJSONPath,
+            JSON.stringify({ ...fileContent, name: projectName }, null, 2),
+            (err) => {
+              chalk.white('\n write file error \n', err)
+            }
+          )
+        })
+      } catch (error) {
+        chalk.white('\n change package name \n', err)
+      }
+
       // 结束加载图标
       spinner.succeed()
       console.log(chalk.cyan('\n Generation completed!'))
       console.log(chalk.cyan('\n To get started'))
       console.log(chalk.cyan(`\n    cd ${projectName} \n`))
+      console.log(chalk.cyan(`\n    npm install \n`))
     })
   } catch (error) {
     spinner.fail()
