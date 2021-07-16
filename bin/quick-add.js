@@ -44,7 +44,7 @@ inquirer.prompt(question).then((answers) => {
   // 把模板信息写入 template.json 文件中
   fs.writeFile(
     `${__dirname}/../template.json`,
-    JSON.stringify(tplObj),
+    JSON.stringify(tplObj, null, 2),
     'utf-8',
     (err) => {
       if (err) console.log(err)

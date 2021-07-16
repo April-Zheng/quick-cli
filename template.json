@@ -1,3 +1,5 @@
 {
-  "taro": "github:April-Zheng/taro-app-template"
+  "taro": "github:April-Zheng/taro-app-template",
+  "umi-amis": "github:April-Zheng/umi-amis-template",
+  "dumi": "github:April-Zheng/dumi-template"
 }
